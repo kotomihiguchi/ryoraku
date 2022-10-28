@@ -29,7 +29,6 @@ Route::post('user/inquiry/complete', 'User\InquiryController@complete');
 
 Route::get('admin/inquiry/index', 'Admin\InquiyController@index');
 Route::get('admin/inquiry/show', 'Admin\InquiyController@show');
-// Route::get('admin/inquiry/create', 'Admin\InquiryController@add');
-// Route::post('admin/inquiry/create', 'Admin\InquiryController@create');
-// Route::post('admin/inquiry/confirm', 'Admin\InquiryController@confirm');
-// Route::get('admin/inquiry/complete', 'Admin\InquiryController@complete');
+Route::get('admin/reply/create', 'Admin\ReplyController@add');
+Route::post('admin/reply/create', 'Admin\ReplyController@create');
+Route::post('admin/reply/confirm', 'Admin\ReplyController@confirm');

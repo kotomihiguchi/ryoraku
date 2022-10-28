@@ -27,16 +27,28 @@
     </head>
     <body>
   　　　　<h1>問い合わせ一覧</h1>
-
+        <table>
+         
         @foreach($inquiries as $inquiry)
-            <p> 
+         <tr>
+            <td> 
             <a href="{{action('Admin\InquiyController@show',['id' => $inquiry->id])}}">
               {{$inquiry->id}}
-            
              </a>
-            </p>
+            </td>
+            <td>
+               {{$inquiry->name}}
+            </td>
+            <td>
+              @if($inquiry->is_reply == 1)
+                返信済み
+              @else
+                未返信
+              @endif
+            </td>
+          </tr>
         @endforeach
 
-
+        </table>
     </body>
 </html>

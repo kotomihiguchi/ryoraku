@@ -78,9 +78,4 @@ class InquiryController extends Controller
         ]);
         
   }
-  
-  public function complete()
-  {
-    return view('user.inquiry.complete');
-  }
 }

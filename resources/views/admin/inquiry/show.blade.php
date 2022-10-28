@@ -31,10 +31,10 @@
             <p> 
               {{$inquiry->id}}
             </p>
-            <p> 
+            <p> 行きたい方面：
               {{$inquiry->direction}}
             </p>
-            <p> 
+            <p> 日数：
               {{$inquiry->days}}
             </p>
             <p> 
