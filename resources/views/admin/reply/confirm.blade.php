@@ -1,5 +1,4 @@
-
-@extends('layouts.user')
+@extends('layouts.admin')
 @section('title', 'りょらく')
 @section('content')
     <div class="container">
@@ -11,13 +10,20 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>返信内容確認</title>
+        <title>お問い合わせフォーム</title>
     </head>
     <body>
-        <h2>返信内容確認</h2>
-<form method="post" action="{{ action('User\InquiryController@complete') }}" >
+        <h2>お問い合わせ内容確認</h2>
+<form method="post" action="{{ action('Admin\ReplyController@create') }}" >
   @csrf
-		
+		<div class="wrap">
+	 		<p>返信</p>
+	 		<div class="wrap">
+		 	<p>id</p>
+		 		<?php echo htmlspecialchars($id,ENT_QUOTES,'UTF-8');?>
+	 	</div>
+	 		<?php echo nl2br(htmlspecialchars($reply_body,ENT_QUOTES,'UTF-8'));?>
+		</div>
 		<div class="wrap">
 		 	<p>氏名</p>
 		 		<?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
@@ -27,15 +33,12 @@
 		 	<?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
 	 	</div>
 	 	<div class="wrap">
-	 		<p>回答</p>
-	 		<?php echo nl2br(htmlspecialchars($contact_body,ENT_QUOTES,'UTF-8'));?>
-		</div>
-	 	<div class="wrap">
 	 		<input type='button' onclick='history.back()' value='戻る' class="btn-border">
 	 		<input type="submit" value="送信" class="btn-border">
-	 	　  <input type="hidden" name="name" value="<?php echo $name;?>">
+	 		<input type="hidden" name="id" value="<?php echo $id;?>">
+	 		<input type="hidden" name="reply_body" value="<?php echo $reply_body;?>">
+	 	　<input type="hidden" name="name" value="<?php echo $name;?>">
 	 		<input type="hidden" name="email" value="<?php echo $email;?>">
-	 		<input type="hidden" name="contact_body" value="<?php echo $contact_body;?>">
 	 	</div>
 	</form>
     </body>

@@ -68,7 +68,7 @@
               {{$inquiry->email}}
             </p>
   
-            <td><a href="" class="btn btn-primary">返信</a></td>
+            <td><a href="{{ action('Admin\ReplyController@create',['id'=>$inquiry->id])}}" class="btn btn-primary">返信</a></td>
 
     </body>
 </html>

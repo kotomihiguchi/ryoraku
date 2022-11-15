@@ -49,11 +49,7 @@ class InquiryController extends Controller
             'email' => 'required|email',
         ]);
         
-        // Varidationを行う
-      $this->validate($request, Inquiry::$rules);
-      $inquiry = new Inquiry;
-      $form = $request->all();
-        
+
     //transportationの中にその他が含まれている場合wayをチェック
         $form = $request->all();
         if (in_array("その他",$form['transportations'])) {

@@ -1,5 +1,5 @@
 {{-- layouts/user.blade.phpを読み込む --}}
-@extends('layouts.user')
+@extends('layouts.admin')
 
 {{-- user.blade.phpの@yield('title')に'りょらく'を埋め込む --}}
 @section('title', 'りょらく')
@@ -19,16 +19,10 @@
     </head>
     <body>
         <h3>送信完了しました</h3>
-　　　　<p class="message">お問い合わせありがとうございます。3営業日以内にご返信させていただきます。<br>
-                           自動返信メールをお送りしておりますのでご確認ください。<br>
-                           1時間たっても届かない場合は大変お手数ではございますがこちらからご連絡ください。
-　　　　</p>
 <p>
-<a href="{{ action('HomeController@top')}}">トップ画面に戻る</a>
-</p>    
-
+<a href="{{ action('Admin\InquiyController@index')}}">トップ画面に戻る</a>
+</p> 
     </body>
 @csrf
 </html>
-    
 @endsection
