@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Inquiry;
+use App\Mail\ContactMail;
+use Mail;
 
 class ReplyController extends Controller
 {
@@ -14,7 +17,18 @@ class ReplyController extends Controller
   
   public function create(Request $request)
   {
-    $inquiry=Inquiry::find($request->id);
+    $inquiry = Inquiry::find($request->id);
+    $to = [
+	    [
+	        'email' => $inquiry->email, 
+	        'name' => 'Test',
+	    ]
+	  ];
+
+	  Mail::to($to)->send(new ContactMail($inquiry));
+    
+    $inquiry->is_reply = 1;
+    $inquiry->save();
     
     return view('admin.reply.complete');
   }

@@ -37,34 +37,34 @@
             <p> 日数：
               {{$inquiry->days}}
             </p>
-            <p> 
+            <p> 出発場所：
               {{$inquiry->starting_point}}
             </p>
-            <p> 
+            <p> 時期：
               {{$inquiry->season}}
             </p>
-            <p> 
+            <p> 人数：
               {{$inquiry->person}}
             </p>
-            <p> 
+            <p> 予算：
               {{$inquiry->budget}}
             </p>
             
             @foreach($inquiry->transportations as $transpotation)
-            <p> 
+            <p> 交通手段：
               {{$transpotation->name}}
             </p>
             @endforeach
              <p> 
               {{$inquiry->way}}
             </p>
-             <p> 
+             <p> その他のご要望：
               {{$inquiry->contact_body}}
             </p>
-             <p> 
+             <p> 名前：
               {{$inquiry->name}}
             </p>
-            <p> 
+            <p> メールアドレス：
               {{$inquiry->email}}
             </p>
   

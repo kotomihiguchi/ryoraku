@@ -20,9 +20,9 @@
 	 		<p>返信</p>
 	 		<div class="wrap">
 		 	<p>id</p>
-		 		<?php echo htmlspecialchars($id,ENT_QUOTES,'UTF-8');?>
+      {{ $id }}
 	 	</div>
-	 		<?php echo nl2br(htmlspecialchars($reply_body,ENT_QUOTES,'UTF-8'));?>
+	 		{{ $reply_body }}
 		</div>
 		<div class="wrap">
 		 	<p>氏名</p>
