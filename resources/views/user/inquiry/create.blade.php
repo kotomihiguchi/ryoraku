@@ -1,9 +1,7 @@
 {{-- layouts/user.blade.phpを読み込む --}}
 @extends('layouts.user')
-
 {{-- user.blade.phpの@yield('title')に'りょらく'を埋め込む --}}
 @section('title', 'りょらく')
-
 {{-- user.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">

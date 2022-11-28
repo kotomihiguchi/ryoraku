@@ -26,22 +26,22 @@
 		</div>
 		<div class="wrap">
 		 	<p>氏名</p>
-		 		<?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
+		 		{{ $name }}
 	 	</div>
 	 	<div class="wrap">
 		 	<p>メールアドレス</p>
-		 	<?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
+		 	{{ $email }}
 	 	</div>
 	 	<div class="wrap">
 	 		<input type='button' onclick='history.back()' value='戻る' class="btn-border">
 	 		<input type="submit" value="送信" class="btn-border">
-	 		<input type="hidden" name="id" value="<?php echo $id;?>">
-	 		<input type="hidden" name="reply_body" value="<?php echo $reply_body;?>">
-	 	　<input type="hidden" name="name" value="<?php echo $name;?>">
-	 		<input type="hidden" name="email" value="<?php echo $email;?>">
+	 		<input type="hidden" name="id" value="{{ $id }}">
+	 		<input type="hidden" name="reply_body" value="{{ $reply_body }}">
+	 	　<input type="hidden" name="name" value="{{ $name }}">
+	 		<input type="hidden" name="email" value="{{ $email }}">
 	 	</div>
 	</form>
     </body>
 </html>
 
-@endsection
+@endsection 

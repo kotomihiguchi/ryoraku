@@ -19,67 +19,67 @@
   @csrf
 	 	<div class="wrap">
 		 	<p>行きたい方面</p>
-		 		<?php echo $direction;?>
+		 		{{ $direction }}
 		</div>
 
 		<div class="wrap">
 		 	<p>日数</p>
-		 	<?php echo $days;?>
+		 	{{ $days }}
 	 	</div>
 	 	
 	 	<div class="wrap">
 		 	<p>出発場所</p>
-		 	<?php echo $starting_point;?>
+		 	{{ $starting_point }}
 	 	</div>
 	 	
 	 		<div class="wrap">
 		 	<p>行きたい時期</p>
-		 	<?php echo $season;?>
+		 	{{ $season }}
 	 	</div>
 
 	 	<div class="wrap">
 		 	<p>人数</p>
-		 	<?php echo $person;?>
+		 	{{ $person }}
 	 	</div>
 
 	 	<div class="wrap">
 		 	<p>予算</p>
-		 	<?php echo $budget;?>
+		 	{{ $budget }}
 	 	</div>
 	 	
 	 		<div class="wrap">
 		 	<p>交通手段</p>
 		 	@foreach ($transportations as $transportation)
         <p> {{ $transportations_name[$loop->index]}} </p>
-        <input type="hidden" name="transportations[]" value="<?php echo $transportation;?>">
+        <input type="hidden" name="transportations[]" value="{{ $transportation }}">
       @endforeach
       </div>
 
 		<div class="wrap">
 	 		<p>その他、旅行についてのご要望</p>
-	 		<?php echo nl2br(htmlspecialchars($contact_body,ENT_QUOTES,'UTF-8'));?>
+	 		{{ $contact_body }}
 		</div>
 		<div class="wrap">
 		 	<p>氏名</p>
-		 		<?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
+		 		{{ $name }}
 	 	</div>
 	 	<div class="wrap">
 		 	<p>メールアドレス</p>
-		 	<?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
+		 	{{ $email }}
 	 	</div>
 	 	<div class="wrap">
 	 		<input type='button' onclick='history.back()' value='戻る' class="btn-border">
 	 		<input type="submit" value="送信" class="btn-border">
-	 		<input type="hidden" name="direction" value="<?php echo $direction;?>">
-	 		<input type="hidden" name="days" value="<?php echo $days;?>">
-	 		<input type="hidden" name="starting_point" value="<?php echo $starting_point;?>">
-	 		<input type="hidden" name="season" value="<?php echo $season;?>">
-	 		<input type="hidden" name="person" value="<?php echo $person;?>">
-	 		<input type="hidden" name="budget" value="<?php echo $budget;?>">
+	 		<input type="hidden" name="direction" value="{{ $direction }}">
+	 		<input type="hidden" name="days" value="{{ $days }}">
+	 		<input type="hidden" name="starting_point" value="{{ $starting_point }}">
+	 		<input type="hidden" name="season" value="{{ $season }}">
+	 		<input type="hidden" name="person" value="{{ $person }}">
+	 		<input type="hidden" name="budget" value="{{ $budget }}">
 	 		
-	 		<input type="hidden" name="contact_body" value="<?php echo $contact_body;?>">
-	 	　<input type="hidden" name="name" value="<?php echo $name;?>">
-	 		<input type="hidden" name="email" value="<?php echo $email;?>">
+	 		<input type="hidden" name="contact_body" value="{{ $contact_body }}">
+	 	　<input type="hidden" name="name" value="{{ $name }}">
+	 		<input type="hidden" name="email" value="{{ $email }}">
 	 	</div>
 	</form>
     </body>
